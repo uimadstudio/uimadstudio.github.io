@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Al Yemen Mandi · Dubai</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Amiri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+  :root { --bg:#f8f2e8; --ink:#1c1410; --accent:#9e2a1e; --gold:#c9a24b; --paper:#fffbf4;
+          --display:"Amiri", Georgia, serif; --body:"Inter", system-ui, sans-serif; }
+  html[dir=rtl] { --display:"Cairo", sans-serif; --body:"Cairo", system-ui, sans-serif; }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:17px/1.65 var(--body); padding-bottom:72px; }
+  [lang]:not(html) { display:none; }
+  html[lang=ar] [lang=ar], html[lang=en] [lang=en] { display:revert; }
+  a { color:inherit; }
+  .wrap { max-width:1120px; margin:0 auto; padding-inline:20px; }
+  .demo { background:#111; color:#eee; font-size:13px; text-align:center; padding:7px 16px; }
+  .top { position:sticky; top:0; z-index:9; background:color-mix(in srgb, var(--bg) 94%, transparent); backdrop-filter:blur(8px); border-bottom:1px solid color-mix(in srgb, var(--ink) 12%, transparent); }
+  .top .wrap { display:flex; align-items:center; justify-content:space-between; gap:12px; padding-block:12px; }
+  .logo { display:flex; align-items:center; gap:10px; font:700 20px/1.1 var(--display); text-decoration:none; }
+  .logo i { flex:none; width:38px; height:38px; border-radius:10px; background:var(--accent); color:#fff; display:grid; place-items:center; font:700 15px var(--display); font-style:normal; letter-spacing:-.02em; }
+  .logo i svg { width:22px; height:22px; }
+  .langs { display:flex; gap:4px; background:color-mix(in srgb, var(--ink) 8%, transparent); border-radius:999px; padding:3px; }
+  .langs button { border:0; background:none; color:var(--ink); font:600 13px var(--body); padding:6px 10px; border-radius:999px; cursor:pointer; }
+  .langs button[aria-pressed=true] { background:var(--accent); color:#fff; }
+  .hero { position:relative; overflow:hidden; background:var(--accent); color:#fff; }
+  .hero::before { content:""; position:absolute; inset:0; opacity:.16; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='white' stroke-width='1.4'%3E%3Crect x='22' y='22' width='36' height='36'/%3E%3Crect x='22' y='22' width='36' height='36' transform='rotate(45 40 40)'/%3E%3Ccircle cx='40' cy='40' r='7'/%3E%3C/g%3E%3C/svg%3E"); background-size:80px 80px; }
+  .hero .wrap { position:relative; padding-block:clamp(56px,10vw,110px); }
+  .eyebrow { text-transform:uppercase; letter-spacing:.14em; font-size:13px; font-weight:700; color:var(--gold); }
+  html[dir=rtl] .eyebrow { letter-spacing:0; font-size:15px; }
+  h1 { font:700 clamp(40px,7vw,80px)/1.05 var(--display); margin:12px 0 16px; max-width:16ch; }
+  .hero p { font-size:clamp(17px,2vw,21px); max-width:34em; margin:0 0 28px; opacity:.95; }
+  .rating { display:inline-flex; gap:8px; align-items:center; background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.35); padding:6px 14px; border-radius:999px; font-weight:600; font-size:15px; margin-bottom:16px; }
+  .btns { display:flex; flex-wrap:wrap; gap:10px; }
+  .btn { display:inline-flex; align-items:center; gap:8px; text-decoration:none; padding:13px 22px; border-radius:999px; font-weight:700; background:#fff; color:var(--accent); }
+  .btn.wa { background:#25D366; color:#fff; }
+  .btn.ghost { background:transparent; border:1.5px solid rgba(255,255,255,.8); color:#fff; }
+  .btn svg { width:20px; height:20px; fill:currentColor; }
+  .hero .has-img { display:grid; grid-template-columns:1.1fr .9fr; gap:36px; align-items:center; }
+  .hero-img { width:100%; aspect-ratio:1; object-fit:cover; border-radius:50%; border:8px solid rgba(255,255,255,.16); box-shadow:0 30px 60px rgba(0,0,0,.35); }
+  .gallery-s { background:#1e1e1e; padding-block:44px 26px; }
+  .gal { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px; }
+  .gal figure { margin:0; } .gal img { width:100%; aspect-ratio:1; object-fit:cover; border-radius:16px; display:block; }
+  .gal figcaption { color:#eee; font-size:14px; margin-top:8px; text-align:center; }
+  .menu-s { background:var(--paper); }
+  .menu-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:30px; }
+  .mcol h3 { font:700 15px var(--body); text-transform:uppercase; letter-spacing:.1em; color:var(--accent); margin:0 0 10px; }
+  html[dir=rtl] .mcol h3 { letter-spacing:0; font-size:17px; }
+  .mrow { display:grid; grid-template-columns:1fr auto auto; gap:14px; padding:9px 0; border-bottom:1px dashed color-mix(in srgb, var(--ink) 20%, transparent); align-items:baseline; }
+  .mrow b { min-width:46px; text-align:end; } .mhead { border:0; padding-bottom:0; font-size:13px; opacity:.6; }
+  .mrow.one { grid-template-columns:1fr auto; }
+  .booking { background:var(--ink); color:#fff; }
+  .book { display:grid; grid-template-columns:1.2fr .8fr; gap:36px; align-items:center; }
+  .book p { font-size:18px; opacity:.9; margin:0 0 24px; } .book img { width:100%; border-radius:50%; aspect-ratio:1; object-fit:cover; }
+  .book-ic { justify-self:center; width:220px; height:220px; border-radius:50%; display:grid; place-items:center; background:rgba(255,255,255,.06); color:var(--gold); } .book-ic svg { width:110px; height:110px; stroke-width:1.2; }
+  .pick { position:relative; display:inline-block; }
+  .pick summary { list-style:none; cursor:pointer; } .pick summary::-webkit-details-marker { display:none; }
+  .pick-list { position:absolute; z-index:20; inset-inline-start:0; top:calc(100% + 8px); min-width:260px; background:#fff; border-radius:16px; box-shadow:0 18px 40px rgba(0,0,0,.25); padding:8px; display:grid; gap:4px; }
+  .pick-list a { display:flex; align-items:center; gap:10px; padding:12px 14px; border-radius:10px; color:#12302e; text-decoration:none; font-weight:600; }
+  .pick-list a:hover { background:#eef6f5; } .pick-list svg { width:20px; height:20px; fill:#25D366; }
+  .bar .pick-list { top:auto; bottom:calc(100% + 8px); inset-inline:8px; }
+  .others-t { font:700 22px var(--display); margin:34px 0 14px; }
+  .others { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:12px; }
+  .other { background:var(--bg); border-radius:16px; padding:16px 18px; display:grid; gap:6px; }
+  .other b { font-size:16px; } .other a { display:inline-flex; align-items:center; gap:8px; color:var(--accent); text-decoration:none; font-weight:600; font-size:15px; }
+  .other svg { width:17px; height:17px; fill:currentColor; }
+  .facts { background:var(--ink); color:var(--bg); }
+  @media (max-width:820px) { .multi .branch iframe { display:none; } .gal figure:nth-child(odd):last-child { grid-column:1 / -1; } }
+  .facts .wrap { display:flex; flex-wrap:wrap; justify-content:center; gap:10px 34px; padding-block:16px; font-weight:600; font-size:15px; }
+  .facts .wrap > span::before { content:"✦"; margin-inline-end:10px; color:var(--gold); }
+  section { padding-block:72px; }
+  h2 { font:700 clamp(30px,4vw,46px)/1.15 var(--display); margin:6px 0 26px; }
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:18px; }
+  .card { background:var(--paper); border-radius:18px; padding:26px; border:1px solid color-mix(in srgb, var(--ink) 8%, transparent); }
+  .card .ic { width:52px; height:52px; border-radius:14px; display:grid; place-items:center; background:color-mix(in srgb, var(--accent) 12%, transparent); color:var(--accent); margin-bottom:14px; }
+  .card .ic svg { width:28px; height:28px; }
+  .card b { display:block; font:700 21px/1.3 var(--display); margin-bottom:6px; }
+  .card b { font-size:max(21px, 1.15em); }
+  .card span { opacity:.8; font-size:15px; }
+  .quotes { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:18px; }
+  .quotes figure { margin:0; background:var(--paper); border-radius:18px; padding:26px; display:grid; gap:12px; align-content:start; border-top:4px solid var(--gold); }
+  .quotes blockquote { margin:0; font-size:18px; line-height:1.55; }
+  .quotes figcaption { font-size:14px; opacity:.65; }
+  .stars { color:var(--gold); letter-spacing:2px; }
+  .small { font-size:13px; opacity:.6; margin-top:16px; }
+  .visit { background:var(--paper); }
+  .branches { display:grid; gap:22px; }
+  .branch { display:grid; grid-template-columns:1fr 1.1fr; gap:28px; background:var(--bg); border-radius:22px; padding:24px; align-items:start; }
+  .branch > * { min-width:0; }
+  .bname { font:700 22px/1.3 var(--display) !important; color:var(--ink) !important; letter-spacing:0 !important; text-transform:none !important; }
+  .bname small { display:block; font:600 14px var(--body); color:var(--accent); margin-top:4px; }
+  .small-btns .btn { padding:10px 16px; font-size:15px; }
+  .btn.line { background:transparent; border:1.5px solid var(--accent); color:var(--accent); }
+  .branch .btn:not(.wa):not(.line) { background:var(--accent); color:#fff; }
+  .contactline { margin-top:22px; text-align:center; }
+  .visit-grid { display:grid; grid-template-columns:1fr 1.2fr; gap:36px; align-items:start; }
+  .visit-grid > * { min-width:0; }
+  .info { display:grid; gap:24px; }
+  .info h3 { font:700 13px var(--body); letter-spacing:.12em; text-transform:uppercase; color:var(--accent); margin:0 0 8px; }
+  html[dir=rtl] .info h3 { letter-spacing:0; font-size:15px; }
+  .info p { margin:0; }
+  table { border-collapse:collapse; width:100%; max-width:380px; }
+  td { padding:4px 0; } td + td { text-align:end; font-weight:600; direction:ltr; unicode-bidi:isolate; }
+  iframe { width:100%; height:400px; border:0; border-radius:18px; }
+  .ltr { direction:ltr; unicode-bidi:isolate; display:inline-block; }
+  footer { background:var(--ink); color:var(--bg); padding-block:34px; font-size:14px; }
+  footer .wrap { display:flex; flex-wrap:wrap; justify-content:space-between; gap:10px 30px; }
+  .bar { position:fixed; inset-inline:0; bottom:0; z-index:10; display:grid; grid-template-columns:repeat(3,1fr); background:var(--ink); }
+  .bar a { display:flex; flex-direction:column; align-items:center; gap:2px; padding:10px 4px; color:#fff; text-decoration:none; font-size:13px; font-weight:600; }
+  .bar a.wa { background:#25D366; }
+  .bar svg { width:22px; height:22px; fill:currentColor; }
+  @media (min-width:821px) { .bar { display:none; } body { padding-bottom:0; } }
+  @media (max-width:820px) { .hero .has-img, .book { grid-template-columns:1fr; } .hero-img { max-width:280px; margin:0 auto; } .gal { grid-template-columns:1fr 1fr; } .book img { max-width:260px; } .visit-grid, .branch { grid-template-columns:1fr; } .branch { padding:16px; } .logo span { font-size:17px; } }
+</style>
+</head>
+<body>
+<div class="demo"><span lang="ar">موقع تجريبي أعدّه Uimad Studio لـ مطعم اليمن للمندي. هذا ليس الموقع الرسمي.</span><span lang="en">Demo website prepared for Al Yemen Mandi by Uimad Studio. This is not the official site.</span></div>
+
+<header class="top"><div class="wrap">
+  <a class="logo" href="#"><i><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" /> </svg> </i><span lang="ar">مطعم اليمن للمندي</span><span lang="en">Al Yemen Mandi</span></a>
+  <div class="langs" role="group" aria-label="Language"><button data-set="ar">عربي</button><button data-set="en">EN</button></div>
+</div></header>
+
+<section class="hero" style="padding:0"><div class="wrap has-img"><div>
+  <div class="rating">★ <span class="ltr">4.2</span> <span lang="ar">على Google</span><span lang="en">on Google</span> · <span class="ltr">439</span> <span lang="ar">تقييم</span><span lang="en">reviews</span></div>
+  <div class="eyebrow"><span lang="ar">مندي ومطبخ يمني · 7 فروع</span><span lang="en">Mandi &amp; Yemeni cuisine · 7 branches</span></div>
+  <h1><span lang="ar">مطعم اليمن للمندي</span><span lang="en">Al Yemen Mandi</span></h1>
+  <p><span lang="ar">مندي ومظبي ومدفون وحنيذ، فحسة وسلتة وعصيد، وأسماك مشوية. ذبائح كاملة حسب الطلب: مندي، مظبي، نعيمي، نجدي وكشميري.</span><span lang="en">Mandi, madhbi, madfoon and haneeth, fahsa, saltah and aseed, and grilled fish. Whole lamb on request: mandi, madhbi, Naeemi, Najdi and Kashmiri.</span></p>
+  <div class="btns">
+    <a class="btn wa" data-wa="971504791047" data-text="general" href="https://wa.me/971504791047"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></svg><span lang="ar">اطلب عبر واتساب</span><span lang="en">Order on WhatsApp</span></a>
+    <a class="btn" href="tel:+97144250591"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.2 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .6 3.6 1 1 0 0 1-.3 1z"/></svg><span lang="ar">اتصل بنا</span><span lang="en">Call us</span></a>
+    <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=Al%20Yemen%20Mandi%20International%20City%20Dubai"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg><span lang="ar">الاتجاهات</span><span lang="en">Directions</span></a>
+  </div>
+</div><img class="hero-img" src="img/chicken-mandi.jpg" alt=""></div></section>
+
+<div class="facts"><div class="wrap"><span><span lang="ar">مفتوح كل يوم من 10 صباحاً حتى 2 بعد منتصف الليل</span><span lang="en">Open every day, 10 AM to 2 AM</span></span><span><span lang="ar">تقييم 4.2 من 439 عميلاً على Google</span><span lang="en">Rated 4.2 by 439 customers on Google</span></span><span><span lang="ar">دبي · الشارقة · رأس الخيمة</span><span lang="en">Dubai · Sharjah · Ras Al Khaimah</span></span><span><span lang="ar">ذبائح حسب الطلب</span><span lang="en">Whole lamb on request</span></span></div></div>
+
+<section class="gallery-s"><div class="wrap gal"><figure><img src="img/haneeth.jpg" alt="Haneeth" loading="lazy"><figcaption><span lang="ar">حنيذ</span><span lang="en">Haneeth</span></figcaption></figure><figure><img src="img/grilled-fish.jpg" alt="Grilled fish" loading="lazy"><figcaption><span lang="ar">سمك مشوي</span><span lang="en">Grilled fish</span></figcaption></figure><figure><img src="img/restaurant.jpg" alt="Our restaurant" loading="lazy"><figcaption><span lang="ar">مطعمنا</span><span lang="en">Our restaurant</span></figcaption></figure><figure><img src="img/inside.jpg" alt="Inside" loading="lazy"><figcaption><span lang="ar">جلسات المطعم</span><span lang="en">Inside</span></figcaption></figure></div>
+  <p class="wrap small" style="color:#bbb"><span lang="ar">صور من صفحة المطعم على Google.</span><span lang="en">Photos from the restaurant's Google listing.</span></p></section>
+
+<section id="offer"><div class="wrap">
+  <div class="eyebrow"><span lang="ar">ماذا نقدّم</span><span lang="en">What we offer</span></div>
+  <h2><span lang="ar">طعم اليمن الأصيل</span><span lang="en">The real taste of Yemen</span></h2>
+  <div class="cards"><div class="card"><div class="ic"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" /> </svg> </div><b><span lang="ar">مندي ومظبي</span><span lang="en">Mandi &amp; madhbi</span></b><span><span lang="ar">دجاج ولحم: مندي ومظبي ومدفون وزربيان.</span><span lang="en">Chicken and lamb: mandi, madhbi, madfoon and zurbian.</span></span></div><div class="card"><div class="ic"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <circle cx="12.5" cy="8.5" r="2.5" /> <path d="M12.5 2a6.5 6.5 0 0 0-6.22 4.6c-1.1 3.13-.78 3.9-3.18 6.08A3 3 0 0 0 5 18c4 0 8.4-1.8 11.4-4.3A6.5 6.5 0 0 0 12.5 2Z" /> <path d="m18.5 6 2.19 4.5a6.48 6.48 0 0 1 .31 2 6.49 6.49 0 0 1-2.6 5.2C15.4 20.2 11 22 7 22a3 3 0 0 1-2.68-1.66L2.4 16.5" /> </svg> </div><b><span lang="ar">حنيذ ولحوم</span><span lang="en">Haneeth &amp; lamb</span></b><span><span lang="ar">حنيذ ضلع وكتف، مقلقل، كباب صنعاني.</span><span lang="en">Haneeth rib and shoulder, muqalqal, kabab Sana'ani.</span></span></div><div class="card"><div class="ic"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M17 21a1 1 0 0 0 1-1v-5.35c0-.457.316-.844.727-1.041a4 4 0 0 0-2.134-7.589 5 5 0 0 0-9.186 0 4 4 0 0 0-2.134 7.588c.411.198.727.585.727 1.041V20a1 1 0 0 0 1 1Z" /> <path d="M6 17h12" /> </svg> </div><b><span lang="ar">قلابات يمنية</span><span lang="en">Yemeni qulabat</span></b><span><span lang="ar">فحسة، سلتة، فتة مرق، عصيد وشكشوكة.</span><span lang="en">Fahsa, saltah, fatta maraq, aseed and shakshuka.</span></span></div><div class="card"><div class="ic"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M6.5 12c.94-3.46 4.94-6 8.5-6 3.56 0 6.06 2.54 7 6-.94 3.47-3.44 6-7 6s-7.56-2.53-8.5-6Z" /> <path d="M18 12v.5" /> <path d="M16 17.93a9.77 9.77 0 0 1 0-11.86" /> <path d="M7 10.67C7 8 5.58 5.97 2.73 5.5c-1 1.5-1 5 .23 6.5-1.24 1.5-1.24 5-.23 6.5C5.58 18.03 7 16 7 13.33" /> <path d="M10.46 7.26C10.2 5.88 9.17 4.24 8 3h5.8a2 2 0 0 1 1.98 1.67l.23 1.4" /> <path d="m16.01 17.93-.23 1.4A2 2 0 0 1 13.8 21H9.5a5.96 5.96 0 0 0 1.49-3.98" /> </svg> </div><b><span lang="ar">أسماك</span><span lang="en">Seafood</span></b><span><span lang="ar">فرش مشوي، كنعد، سلمون وروبيان.</span><span lang="en">Grilled farsh, kingfish, salmon and shrimp.</span></span></div><div class="card"><div class="ic"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M3.5 21 14 3" /> <path d="M20.5 21 10 3" /> <path d="M15.5 21 12 15l-3.5 6" /> <path d="M2 21h20" /> </svg> </div><b><span lang="ar">ذبائح ومناسبات</span><span lang="en">Whole lamb &amp; gatherings</span></b><span><span lang="ar">ذبيحة كاملة حسب الطلب لعزائمكم ومناسباتكم.</span><span lang="en">A whole lamb on request for your family gatherings.</span></span></div></div>
+</div></section>
+
+<section class="menu-s" id="menu"><div class="wrap">
+  <div class="eyebrow"><span lang="ar">القائمة</span><span lang="en">Menu</span></div>
+  <h2><span lang="ar">من قائمتنا</span><span lang="en">From our menu</span></h2>
+  <div class="menu-grid"><div class="mcol"><h3><span lang="ar">مندي ومظبي</span><span lang="en">Mandi &amp; madhbi</span></h3><div class="mrow mhead one"><span></span><b><span lang="ar">درهم</span><span lang="en">AED</span></b></div><div class="mrow one"><span><span lang="ar">دجاج مندي</span><span lang="en">Chicken mandi</span></span><b class="ltr">30</b></div><div class="mrow one"><span><span lang="ar">دجاج مظبي</span><span lang="en">Chicken madhbi</span></span><b class="ltr">30</b></div><div class="mrow one"><span><span lang="ar">دجاج كبسة</span><span lang="en">Chicken kabsa</span></span><b class="ltr">32</b></div><div class="mrow one"><span><span lang="ar">مندي لحم</span><span lang="en">Mutton mandi</span></span><b class="ltr">50</b></div><div class="mrow one"><span><span lang="ar">مندي لحم بلدي</span><span lang="en">Mutton mandi, local</span></span><b class="ltr">80</b></div><div class="mrow one"><span><span lang="ar">مظبي لحم</span><span lang="en">Mutton madhbi</span></span><b class="ltr">75</b></div><div class="mrow one"><span><span lang="ar">حنيذ ضلع</span><span lang="en">Mutton haneeth rib</span></span><b class="ltr">75</b></div></div><div class="mcol"><h3><span lang="ar">قلابات وأطباق يمنية</span><span lang="en">Yemeni dishes</span></h3><div class="mrow mhead one"><span></span><b><span lang="ar">درهم</span><span lang="en">AED</span></b></div><div class="mrow one"><span><span lang="ar">فحسة</span><span lang="en">Fahsa</span></span><b class="ltr">30</b></div><div class="mrow one"><span><span lang="ar">سلتة</span><span lang="en">Saltah</span></span><b class="ltr">25</b></div><div class="mrow one"><span><span lang="ar">فتة مرق</span><span lang="en">Fatta maraq</span></span><b class="ltr">20</b></div><div class="mrow one"><span><span lang="ar">مقلقل لحم</span><span lang="en">Mutton muqalqal</span></span><b class="ltr">70</b></div><div class="mrow one"><span><span lang="ar">كباب صنعاني</span><span lang="en">Kabab Sana'ani</span></span><b class="ltr">40</b></div><div class="mrow one"><span><span lang="ar">عصيد</span><span lang="en">Aseed</span></span><b class="ltr">25</b></div><div class="mrow one"><span><span lang="ar">شوربة عدس</span><span lang="en">Lentil soup</span></span><b class="ltr">10</b></div></div><div class="mcol"><h3><span lang="ar">أسماك وخبز</span><span lang="en">Seafood &amp; breads</span></h3><div class="mrow mhead one"><span></span><b><span lang="ar">درهم</span><span lang="en">AED</span></b></div><div class="mrow one"><span><span lang="ar">فرش مشوي</span><span lang="en">Grilled farsh</span></span><b class="ltr">60</b></div><div class="mrow one"><span><span lang="ar">سمك كنعد</span><span lang="en">Kingfish</span></span><b class="ltr">50</b></div><div class="mrow one"><span><span lang="ar">روبيان برياني</span><span lang="en">Shrimp biryani</span></span><b class="ltr">50</b></div><div class="mrow one"><span><span lang="ar">ملوح / رطب / كرس</span><span lang="en">Molaouh / rotab / kars bread</span></span><b class="ltr">7</b></div><div class="mrow one"><span><span lang="ar">خبز بالعسل الدبل</span><span lang="en">Honey with bread</span></span><b class="ltr">15</b></div><div class="mrow one"><span><span lang="ar">ذبيحة كاملة</span><span lang="en">Whole lamb</span></span><b><span lang="ar">حسب الطلب</span><span lang="en">On request</span></b></div></div></div>
+  <p class="small"><span lang="ar">الأسعار بالدرهم الإماراتي، من قائمة المطعم.</span><span lang="en">Prices in AED, from the restaurant's menu.</span></p>
+</div></section>
+
+<section class="booking" id="booking"><div class="wrap book">
+  <div><div class="eyebrow"><span lang="ar">ذبائح ومناسبات</span><span lang="en">Whole lamb &amp; gatherings</span></div><h2><span lang="ar">عزيمة أو مناسبة؟ اطلب ذبيحتك مسبقاً</span><span lang="en">A family gathering? Order your whole lamb ahead</span></h2><p><span lang="ar">أرسلوا لنا نوع الذبيحة والتاريخ وعدد الأشخاص والفرع، ونرد عليكم بالسعر والتفاصيل.</span><span lang="en">Send us the type of lamb, the date, the number of guests and the branch, and we will reply with the price and details.</span></p>
+  <a class="btn wa" data-wa="971504791047" data-text="booking" href="https://wa.me/971504791047"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></svg><span lang="ar">اطلب عبر واتساب</span><span lang="en">Order on WhatsApp</span></a></div>
+  <div class="book-ic"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M3.5 21 14 3" /> <path d="M20.5 21 10 3" /> <path d="M15.5 21 12 15l-3.5 6" /> <path d="M2 21h20" /> </svg> </div>
+</div></section>
+
+<section id="reviews" style="padding-top:0"><div class="wrap">
+  <div class="eyebrow">Google</div>
+  <h2><span lang="ar">آراء العملاء على Google</span><span lang="en">What customers say on Google</span></h2>
+  <div class="quotes"><figure><blockquote><span lang="ar">“من أروع المندي اللي أكلته في الإمارات، طيب جدا جدا …”</span><span lang="en">“One of the best mandi I have had in the UAE, really, really tasty …”</span></blockquote><figcaption><span lang="ar">أنور ح. · تقييم على Google</span><span lang="en">Anwar H. · Google review</span><span lang="en"> · translated</span></figcaption></figure><figure><blockquote><span lang="ar">“رز ودجاج المظبي كان لذيذاً جداً. … 4/5، أنصح به!”</span><span lang="en">“Madhbi rice &amp; chicken was very delicious. … 4/5 recommended!”</span></blockquote><figcaption><span lang="ar">فهد · تقييم على Google</span><span lang="en">Fahad · Google review</span><span lang="ar"> · مترجم</span></figcaption></figure></div>
+  <p class="small"><span lang="ar">اقتباسات من تقييمات Google العامة.</span><span lang="en">Quotes from public Google reviews.</span> <a href="https://www.google.com/maps/search/?api=1&query=Al%20Yemen%20Mandi%20International%20City%20Dubai"><span lang="ar">اقرأ كل التقييمات على Google</span><span lang="en">Read all reviews on Google</span> →</a></p>
+</div></section>
+
+<section class="visit" id="visit"><div class="wrap">
+  <div class="eyebrow"><span lang="ar">زورونا</span><span lang="en">Visit us</span></div>
+  <h2><span lang="ar">فرع إنترناشونال سيتي</span><span lang="en">International City branch</span></h2>
+  <div class="branches"><div class="branch solo">
+    <div class="info">
+      
+      <div><h3><span lang="ar">ساعات العمل</span><span lang="en">Opening hours</span></h3><table><tr><td><span lang="ar">كل يوم</span><span lang="en">Every day</span></td><td>10:00 – 02:00</td></tr></table></div>
+      <div><h3><span lang="ar">العنوان</span><span lang="en">Address</span></h3><p><span lang="ar">شارع England Y، ورسان 1، إنترناشونال سيتي، دبي</span><span lang="en">England Y Street, Warsan 1, International City, Dubai</span></p></div>
+      <div class="btns small-btns"><a class="btn wa" data-wa="971504791047" href="https://wa.me/971504791047"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></svg><span lang="ar">واتساب</span><span lang="en">WhatsApp</span></a><a class="btn" href="tel:+97144250591"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.2 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .6 3.6 1 1 0 0 1-.3 1z"/></svg><span class="ltr">+971 4 425 0591</span></a><a class="btn line" href="https://www.google.com/maps/search/?api=1&query=Al%20Yemen%20Mandi%20International%20City%20Dubai"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg><span lang="ar">الاتجاهات</span><span lang="en">Directions</span></a></div>
+    </div>
+    <iframe title="Map" src="https://maps.google.com/maps?q=Al%20Yemen%20Mandi%2C%20International%20City%2C%20Dubai&z=16&output=embed"></iframe>
+  </div></div>
+  <h3 class="others-t"><span lang="ar">فروعنا الأخرى</span><span lang="en">Our other branches</span></h3><div class="others"><div class="other"><b><span lang="ar">الفرع الرئيسي: أبو هيل، دبي</span><span lang="en">Main branch: Abu Hail, Dubai</span></b><a class="ltr" href="tel:+97142662207"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.2 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .6 3.6 1 1 0 0 1-.3 1z"/></svg>+971 4 266 2207</a><a href="https://www.google.com/maps/search/?api=1&query=Al%20Yemen%20Mandi%20Abu%20Hail%20Dubai"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg><span lang="ar">الاتجاهات</span><span lang="en">Directions</span></a></div><div class="other"><b><span lang="ar">القصيص 4، شارع دمشق، دبي (فرع جديد)</span><span lang="en">Al Qusais 4, Damascus St, Dubai (new)</span></b><a class="ltr" href="tel:+97142522223"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.2 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .6 3.6 1 1 0 0 1-.3 1z"/></svg>+971 4 252 2223</a><a href="https://www.google.com/maps/search/?api=1&query=Al%20Yemen%20Mandi%20Al%20Qusais%20Damascus%20Street%20Dubai"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg><span lang="ar">الاتجاهات</span><span lang="en">Directions</span></a></div><div class="other"><b><span lang="ar">شارع الرقة، دبي</span><span lang="en">Al Rigga St, Dubai</span></b><a class="ltr" href="tel:+97142234440"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.2 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .6 3.6 1 1 0 0 1-.3 1z"/></svg>+971 4 223 4440</a><a href="https://www.google.com/maps/search/?api=1&query=Al%20Yemen%20Mandi%20Al%20Rigga%20Dubai"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg><span lang="ar">الاتجاهات</span><span lang="en">Directions</span></a></div><div class="other"><b><span lang="ar">القاسمية، الشارقة</span><span lang="en">Al Qasimia, Sharjah</span></b><a class="ltr" href="tel:+97165739405"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.2 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .6 3.6 1 1 0 0 1-.3 1z"/></svg>+971 6 573 9405</a><a href="https://www.google.com/maps/search/?api=1&query=Al%20Yemen%20Mandi%20Al%20Qasimia%20Sharjah"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg><span lang="ar">الاتجاهات</span><span lang="en">Directions</span></a></div><div class="other"><b><span lang="ar">كورنيش القواسم، رأس الخيمة</span><span lang="en">Al Qawasim Corniche, Ras Al Khaimah</span></b><a class="ltr" href="tel:+97172333230"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.2 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .6 3.6 1 1 0 0 1-.3 1z"/></svg>+971 7 233 3230</a><a href="https://www.google.com/maps/search/?api=1&query=Al%20Yemen%20Mandi%20Al%20Qawasim%20Corniche%20Ras%20Al%20Khaimah"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg><span lang="ar">الاتجاهات</span><span lang="en">Directions</span></a></div><div class="other"><b><span lang="ar">تيمبي، أريزونا، أمريكا</span><span lang="en">Tempe, Arizona, USA</span></b><a class="ltr" href="tel:+16022424656"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.2 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .6 3.6 1 1 0 0 1-.3 1z"/></svg>+1 602 242 4656</a><a href="https://www.google.com/maps/search/?api=1&query=Al%20Yemen%20Mandi%20Tempe%20Arizona"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg><span lang="ar">الاتجاهات</span><span lang="en">Directions</span></a></div></div>
+  <p class="contactline"><a class="ltr" href="mailto:yemen.restdxb@gmail.com">yemen.restdxb@gmail.com</a></p>
+</div></section>
+
+<footer><div class="wrap">
+  <span>© 2026 <span lang="ar">مطعم اليمن للمندي</span><span lang="en">Al Yemen Mandi</span></span>
+  <span><span lang="ar">موقع تجريبي من Uimad Studio</span><span lang="en">Demo website by Uimad Studio</span></span>
+</div></footer>
+
+<nav class="bar">
+  <a href="tel:+97144250591"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.2 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .6 3.6 1 1 0 0 1-.3 1z"/></svg><span lang="ar">اتصل بنا</span><span lang="en">Call us</span></a>
+  <a class="wa" data-wa="971504791047" href="https://wa.me/971504791047"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></svg><span lang="ar">واتساب</span><span lang="en">WhatsApp</span></a>
+  <a href="https://www.google.com/maps/search/?api=1&query=Al%20Yemen%20Mandi%20International%20City%20Dubai"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg><span lang="ar">الاتجاهات</span><span lang="en">Directions</span></a>
+</nav>
+
+<script>
+  const set = l => { document.documentElement.lang = l; document.documentElement.dir = l === "ar" ? "rtl" : "ltr";
+    document.querySelectorAll("[data-set]").forEach(b => b.setAttribute("aria-pressed", b.dataset.set === l));
+    document.querySelectorAll("[data-wa]").forEach(a => a.href = "https://wa.me/" + a.dataset.wa + "?text=" + encodeURIComponent((a.dataset.text === "booking" ? WB : WA)[l]));
+    try { localStorage.setItem("lang", l); } catch (e) {} };
+  const WA = {"ar":"السلام عليكم، أريد أن أطلب: ","en":"Hello Al Yemen Mandi, I would like to order: ","fr":""};
+  const WB = {"ar":"السلام عليكم، أريد طلب ذبيحة. النوع (مندي/مظبي/نعيمي/نجدي/كشميري): __، التاريخ: __، عدد الأشخاص: __، الفرع: __","en":"Hello Al Yemen Mandi, I would like to order a whole lamb. Type (mandi/madhbi/Naeemi/Najdi/Kashmiri): __, date: __, guests: __, branch: __","fr":""};
+  document.querySelectorAll("[data-set]").forEach(b => b.onclick = () => set(b.dataset.set));
+  let l = new URLSearchParams(location.search).get("lang");
+  if (!l) try { l = localStorage.getItem("lang"); } catch (e) {}
+  set(["ar","en"].includes(l) ? l : "ar");
+</script>
+</body>
+</html>

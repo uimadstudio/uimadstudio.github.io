@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Uimad Studio Work</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap">
+<style>
+  /* Layout: single reading column; work shown as large plates with a short caption strip under each. Highlighter-yellow marks the one thing to notice. */
+  :root {
+    --paper:#f7f8f6; --ink:#16191d; --sub:#5a6168; --rule:#dfe2de; --plate:#ffffff; --mark:#ffd84a; --link:#1b4fd1;
+    --display:"Bricolage Grotesque", "Arial Narrow", sans-serif;
+    --body:"Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --mono:"JetBrains Mono", ui-monospace, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --paper:#121417; --ink:#eceee9; --sub:#a2a8ad; --rule:#2a2e33; --plate:#1a1d21; --mark:#c9a92a; --link:#8fb0ff; color-scheme:dark; }
+  }
+  :root[data-theme="dark"] { --paper:#121417; --ink:#eceee9; --sub:#a2a8ad; --rule:#2a2e33; --plate:#1a1d21; --mark:#c9a92a; --link:#8fb0ff; color-scheme:dark; }
+
+  body { background:var(--paper); color:var(--ink); font:17px/1.6 var(--body); }
+  .page { max-width:960px; margin:0 auto; padding-inline:20px; padding-block:48px 72px; display:grid; gap:64px; }
+  a { color:var(--link); }
+  a:focus-visible { outline:2px solid var(--link); outline-offset:2px; }
+
+  header { display:grid; gap:18px; }
+  .who { font:500 13px/1 var(--mono); letter-spacing:.08em; text-transform:uppercase; color:var(--sub); }
+  h1 { font:800 clamp(36px,6vw,64px)/1.02 var(--display); letter-spacing:-.02em; margin:0; text-wrap:balance; max-width:15ch; }
+  h1 mark { background:linear-gradient(transparent 58%, var(--mark) 58%); color:inherit; }
+  .lede { font-size:19px; color:var(--sub); max-width:58ch; margin:0; }
+
+  .services { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:0; border-top:1px solid var(--ink); }
+  .svc { padding:16px 16px 18px 0; border-bottom:1px solid var(--rule); display:grid; gap:4px; min-width:0; }
+  .svc b { font:600 18px/1.3 var(--display); }
+  .svc span { color:var(--sub); font-size:15px; }
+  .launch { margin:0; padding:10px 14px; background:var(--plate); border-left:4px solid var(--mark); max-width:62ch; }
+  .svc em s { color:var(--sub); margin-right:4px; }
+  .svc em { font:400 14px/1.4 var(--mono); font-style:normal; font-variant-numeric:tabular-nums; }
+
+  h2 { font:800 32px/1.1 var(--display); margin:0 0 6px; letter-spacing:-.01em; text-wrap:balance; }
+  .section { display:grid; gap:20px; }
+  .section > p { margin:0; color:var(--sub); max-width:60ch; }
+  figure { margin:0; display:grid; gap:10px; }
+  figure img { display:block; width:100%; max-width:100%; height:auto; border:1px solid var(--rule); background:var(--plate); }
+  figcaption { font-size:14px; color:var(--sub); display:flex; flex-wrap:wrap; gap:4px 16px; }
+  figcaption b { color:var(--ink); font-weight:600; }
+  .pair { display:grid; grid-template-columns:2.6fr 1fr; gap:16px; align-items:start; }
+  .pair > * { min-width:0; }
+
+  .excerpt { background:var(--plate); border:1px solid var(--rule); padding:24px; display:grid; gap:12px; max-width:68ch; }
+  .excerpt p { margin:0; }
+  .cue { font:400 13px/1.5 var(--mono); color:var(--sub); }
+
+  .scroll { overflow-x:auto; border:1px solid var(--rule); background:var(--plate); }
+  table { border-collapse:collapse; font:400 13px/1.4 var(--mono); width:100%; }
+  th, td { padding:6px 10px; border-bottom:1px solid var(--rule); text-align:left; white-space:nowrap; }
+  th { color:var(--sub); font-weight:400; }
+
+  ol.steps { margin:0; padding:0; list-style:none; display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:20px; counter-reset:s; }
+  ol.steps li { counter-increment:s; display:grid; gap:4px; border-top:1px solid var(--ink); padding-top:12px; }
+  ol.steps li::before { content:"Step " counter(s); font:500 12px/1 var(--mono); letter-spacing:.08em; text-transform:uppercase; color:var(--sub); }
+  .note { font-size:15px; color:var(--sub); max-width:62ch; margin:0; }
+
+  @media (max-width:640px) { .pair { grid-template-columns:1fr; } .page { gap:48px; } }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <header>
+    <div class="who">Uimad Studio · design, web &amp; writing</div>
+    <h1>Logos, websites and words, <mark>delivered in 24–72h</mark>.</h1>
+    <p class="lede">I work with small businesses, bands, creators and early-stage apps. You get a fixed price up front and a preview before you pay anything.</p>
+    <p class="launch"><b>Launch prices for my first clients.</b> I'm building my client base, so the prices below are reduced for the first clients only.</p>
+    <div class="services">
+      <div class="svc"><b>Logo &amp; brand mark</b><span>Wordmark + icon, SVG and PNG files</span><em><s>$60</s> $15 launch price</em></div>
+      <div class="svc"><b>Website / landing page</b><span>Coded from your sketch or brief, mobile-ready</span><em><s>€120</s> €45 launch price</em></div>
+      <div class="svc"><b>UX review</b><span>Written audit + improved screens</span><em><s>$70</s> $30 launch price</em></div>
+      <div class="svc"><b>Writing</b><span>YouTube scripts, web copy, articles</span><em><s>$40</s> $15 launch price</em></div>
+      <div class="svc"><b>Spreadsheets &amp; automation</b><span>Excel, Google Sheets, scripts</span><em><s>$20</s> $8 launch price</em></div>
+    </div>
+  </header>
+
+  <section class="section" id="logos">
+    <h2>Logos</h2>
+    <p>Three concept marks for different worlds: a rock band, a neighbourhood bakery and a software product. Each is delivered as vector SVG plus PNG on light and dark backgrounds.</p>
+    <figure><img src="band.png" alt="Volt River rock band logo: orange lightning bolt beside a heavy condensed wordmark on black" width="1200" height="675"><figcaption><b>Volt River</b><span>Rock band · condensed wordmark, lightning mark</span></figcaption></figure>
+    <figure><img src="bakery.png" alt="Maple and Crumb artisan bakery logo: wheat ear in a circle above a serif wordmark" width="1200" height="675"><figcaption><b>Maple &amp; Crumb</b><span>Artisan bakery · serif wordmark, wheat emblem</span></figcaption></figure>
+    <figure><img src="tech.png" alt="Northbeam analytics logo: rounded square app icon with an N, next to a lowercase wordmark" width="1200" height="675"><figcaption><b>Northbeam</b><span>Analytics app · app icon + lowercase wordmark</span></figcaption></figure>
+  </section>
+
+  <section class="section" id="web">
+    <h2>Websites</h2>
+    <p>A one-page site for a physiotherapy clinic: hand-coded, loads fast, works on phones, easy to host anywhere (or rebuilt in WordPress if you prefer to edit it yourself).</p>
+    <div class="pair">
+      <figure><img src="site-desktop.png" alt="Harbor Physio website on desktop: headline, booking buttons and a next-free-slot badge" width="1280" height="860"><figcaption><b>Desktop</b></figcaption></figure>
+      <figure><img src="site-mobile.png" alt="Harbor Physio website on a phone screen" width="390" height="844"><figcaption><b>Phone</b></figcaption></figure>
+    </div>
+  </section>
+
+  <section class="section" id="writing">
+    <h2>Writing</h2>
+    <p>Opening of a documentary script about the Mary Celeste (1872), with visual cues for the editor. Every claim is sourced, and popular myths are left out on purpose.</p>
+    <div class="excerpt">
+      <div class="cue">[Visual: grey Atlantic swell, a lone brigantine under partial sail]</div>
+      <p>On the afternoon of December 4th, 1872, somewhere between the Azores and the coast of Portugal, the crew of the British brigantine <i>Dei Gratia</i> noticed something wrong with a ship on the horizon.</p>
+      <p>She was moving, but not like a ship that anyone was steering. Her sails were set badly. She yawed off course, then back again. And when Captain David Morehouse raised his glass, he saw no one at her wheel.</p>
+      <p>When his men rowed across and climbed aboard, they found her cargo of more than seventeen hundred barrels of alcohol almost entirely intact. There was food in the stores. There was fresh water. What they did not find was a single person.</p>
+      <div class="cue">[Title card: THE MARY CELESTE]</div>
+    </div>
+  </section>
+
+  <section class="section" id="novascotia">
+    <h2>Writing sample: RMS Nova Scotia</h2>
+    <p>Intro and opening of Chapter 1 for a maritime history documentary (Big Old Boats application brief). About 230 words.</p>
+    <div class="excerpt">
+      <div class="cue">[INTRO]</div>
+      <p>At a quarter past seven on the morning of November 28th, 1942, off the coast of Natal in South Africa, three torpedoes struck an ageing British liner. Within ten minutes she was gone.</p>
+      <p>Most of the people aboard were Italians: prisoners of war and civilian internees taken in East Africa, being shipped south to camps in South Africa. They had just been sunk by Germany, their own country's ally.</p>
+      <p>When the U-boat surfaced among the wreckage, her commander, Robert Gysae, pulled two men from the water to find out which ship he had hit. They were Italian.</p>
+      <p>What he did next, and what he was ordered to do, would decide who lived and who died. Of the 1,052 people aboard, 858 never came home.</p>
+      <p>This is the story of the RMS <i>Nova Scotia</i>.</p>
+      <div class="cue">[CHAPTER 1: A SHIP FOR THE NORTH ATLANTIC]</div>
+      <p>Sixteen years earlier, she had been built for a very different ocean. Launched at Barrow-in-Furness in May 1926 for Furness, Withy &amp; Co, <i>Nova Scotia</i> was a compact, practical liner: 6,796 gross tons, 406 feet long, with a quadruple-expansion steam engine good for 15 knots.</p>
+      <p>Her job was the cold, foggy run from Liverpool to St John's, Halifax and Boston, carrying mail, cargo and passengers. One of them, in the summer of 1934, was a seventeen-year-old schoolboy named Roald Dahl.</p>
+      <div class="cue">Sources: uboat.net, "Nova Scotia (British troop transport)", uboat.net/allies/merchants/ship/2476.html · "RMS Nova Scotia (1926)", Wikipedia. The full script would add primary sources (Lloyd's Register, U-177 war diary).</div>
+    </div>
+  </section>
+
+  <section class="section" id="data">
+    <h2>Spreadsheets &amp; data</h2>
+    <p>A messy contact export cleaned in one pass: duplicates merged, names split, invalid emails removed, phone numbers in international format.</p>
+    <div class="scroll"><table>
+      <tr><th>First Name</th><th>Last Name</th><th>Email</th><th>Phone</th><th>Company</th></tr>
+      <tr><td>John</td><td>Smith</td><td>john.smith@gmail.com</td><td>+15551234567</td><td>Acme Corp</td></tr>
+      <tr><td>Mary</td><td>O'Neil</td><td>mary@oneil.co</td><td>+15559876543</td><td>O'Neil Bakery</td></tr>
+      <tr><td>Anna-Marie</td><td>Dupont</td><td></td><td>+33612345678</td><td>Dupont SARL</td></tr>
+      <tr><td>Peter</td><td>Parker</td><td>peter@dailybugle.com</td><td>+15552223333</td><td>Daily Bugle</td></tr>
+    </table></div>
+  </section>
+
+  <section class="section" id="process">
+    <h2>How we work together</h2>
+    <ol class="steps">
+      <li><b>Brief</b><span>Tell me what you need. A sketch, a reference or a few lines is enough.</span></li>
+      <li><b>Fixed price</b><span>You get a price and a deadline before any work starts.</span></li>
+      <li><b>Preview</b><span>You see a watermarked preview and ask for changes.</span></li>
+      <li><b>Pay &amp; receive</b><span>Pay by PayPal invoice, then get the final files. Two rounds of tweaks included.</span></li>
+    </ol>
+    <p class="note">I use AI tools in my workflow to work fast, and I review and adjust every deliverable before it reaches you. If your project must be AI-free, tell me and I'll decline rather than waste your time.</p>
+    <p class="note">To start, reply to my message on Reddit with your brief.</p>
+  </section>
+</div>
+</body>
+</html>

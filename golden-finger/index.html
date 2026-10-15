@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Golden Finger Restaurant · Dubai</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Poppins:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+  :root { --bg:#fbf6ec; --ink:#2b1a12; --accent:#6e2a14; --gold:#f2b705; --paper:#ffffff;
+          --display:"Poppins", Georgia, serif; --body:"Inter", system-ui, sans-serif; }
+  html[dir=rtl] { --display:"Cairo", sans-serif; --body:"Cairo", system-ui, sans-serif; }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:17px/1.65 var(--body); padding-bottom:72px; }
+  [lang]:not(html) { display:none; }
+  html[lang=ar] [lang=ar], html[lang=en] [lang=en] { display:revert; }
+  a { color:inherit; }
+  .wrap { max-width:1120px; margin:0 auto; padding-inline:20px; }
+  .demo { background:#111; color:#eee; font-size:13px; text-align:center; padding:7px 16px; }
+  .top { position:sticky; top:0; z-index:9; background:color-mix(in srgb, var(--bg) 94%, transparent); backdrop-filter:blur(8px); border-bottom:1px solid color-mix(in srgb, var(--ink) 12%, transparent); }
+  .top .wrap { display:flex; align-items:center; justify-content:space-between; gap:12px; padding-block:12px; }
+  .logo { display:flex; align-items:center; gap:10px; font:700 20px/1.1 var(--display); text-decoration:none; }
+  .logo i { flex:none; width:38px; height:38px; border-radius:10px; background:var(--accent); color:#fff; display:grid; place-items:center; font:700 15px var(--display); font-style:normal; letter-spacing:-.02em; }
+  .logo i svg { width:22px; height:22px; }
+  .langs { display:flex; gap:4px; background:color-mix(in srgb, var(--ink) 8%, transparent); border-radius:999px; padding:3px; }
+  .langs button { border:0; background:none; color:var(--ink); font:600 13px var(--body); padding:6px 10px; border-radius:999px; cursor:pointer; }
+  .langs button[aria-pressed=true] { background:var(--accent); color:#fff; }
+  .hero { position:relative; overflow:hidden; background:var(--accent); color:#fff; }
+  .hero::before { content:""; position:absolute; inset:0; opacity:.16; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='white' stroke-width='1.4'%3E%3Crect x='22' y='22' width='36' height='36'/%3E%3Crect x='22' y='22' width='36' height='36' transform='rotate(45 40 40)'/%3E%3Ccircle cx='40' cy='40' r='7'/%3E%3C/g%3E%3C/svg%3E"); background-size:80px 80px; }
+  .hero .wrap { position:relative; padding-block:clamp(56px,10vw,110px); }
+  .eyebrow { text-transform:uppercase; letter-spacing:.14em; font-size:13px; font-weight:700; color:var(--gold); }
+  html[dir=rtl] .eyebrow { letter-spacing:0; font-size:15px; }
+  h1 { font:700 clamp(40px,7vw,80px)/1.05 var(--display); margin:12px 0 16px; max-width:16ch; }
+  .hero p { font-size:clamp(17px,2vw,21px); max-width:34em; margin:0 0 28px; opacity:.95; }
+  .rating { display:inline-flex; gap:8px; align-items:center; background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.35); padding:6px 14px; border-radius:999px; font-weight:600; font-size:15px; margin-bottom:16px; }
+  .btns { display:flex; flex-wrap:wrap; gap:10px; }
+  .btn { display:inline-flex; align-items:center; gap:8px; text-decoration:none; padding:13px 22px; border-radius:999px; font-weight:700; background:#fff; color:var(--accent); }
+  .btn.wa { background:#25D366; color:#fff; }
+  .btn.ghost { background:transparent; border:1.5px solid rgba(255,255,255,.8); color:#fff; }
+  .btn svg { width:20px; height:20px; fill:currentColor; }
+  .hero .has-img { display:grid; grid-template-columns:1.1fr .9fr; gap:36px; align-items:center; }
+  .hero-img { width:100%; aspect-ratio:1; object-fit:cover; border-radius:50%; border:8px solid rgba(255,255,255,.16); box-shadow:0 30px 60px rgba(0,0,0,.35); }
+  .gallery-s { background:#1e1e1e; padding-block:44px 26px; }
+  .gal { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px; }
+  .gal figure { margin:0; } .gal img { width:100%; aspect-ratio:1; object-fit:cover; border-radius:16px; display:block; }
+  .gal figcaption { color:#eee; font-size:14px; margin-top:8px; text-align:center; }
+  .menu-s { background:var(--paper); }
+  .menu-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:30px; }
+  .mcol h3 { font:700 15px var(--body); text-transform:uppercase; letter-spacing:.1em; color:var(--accent); margin:0 0 10px; }
+  html[dir=rtl] .mcol h3 { letter-spacing:0; font-size:17px; }
+  .mrow { display:grid; grid-template-columns:1fr auto auto; gap:14px; padding:9px 0; border-bottom:1px dashed color-mix(in srgb, var(--ink) 20%, transparent); align-items:baseline; }
+  .mrow b { min-width:46px; text-align:end; } .mhead { border:0; padding-bottom:0; font-size:13px; opacity:.6; }
+  .mrow.one { grid-template-columns:1fr auto; }
+  .booking { background:var(--ink); color:#fff; }
+  .book { display:grid; grid-template-columns:1.2fr .8fr; gap:36px; align-items:center; }
+  .book p { font-size:18px; opacity:.9; margin:0 0 24px; } .book img { width:100%; border-radius:50%; aspect-ratio:1; object-fit:cover; }
+  .book-ic { justify-self:center; width:220px; height:220px; border-radius:50%; display:grid; place-items:center; background:rgba(255,255,255,.06); color:var(--gold); } .book-ic svg { width:110px; height:110px; stroke-width:1.2; }
+  .pick { position:relative; display:inline-block; }
+  .pick summary { list-style:none; cursor:pointer; } .pick summary::-webkit-details-marker { display:none; }
+  .pick-list { position:absolute; z-index:20; inset-inline-start:0; top:calc(100% + 8px); min-width:260px; background:#fff; border-radius:16px; box-shadow:0 18px 40px rgba(0,0,0,.25); padding:8px; display:grid; gap:4px; }
+  .pick-list a { display:flex; align-items:center; gap:10px; padding:12px 14px; border-radius:10px; color:#12302e; text-decoration:none; font-weight:600; }
+  .pick-list a:hover { background:#eef6f5; } .pick-list svg { width:20px; height:20px; fill:#25D366; }
+  .bar .pick-list { top:auto; bottom:calc(100% + 8px); inset-inline:8px; }
+  .others-t { font:700 22px var(--display); margin:34px 0 14px; }
+  .others { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:12px; }
+  .other { background:var(--bg); border-radius:16px; padding:16px 18px; display:grid; gap:6px; }
+  .other b { font-size:16px; } .other a { display:inline-flex; align-items:center; gap:8px; color:var(--accent); text-decoration:none; font-weight:600; font-size:15px; }
+  .other svg { width:17px; height:17px; fill:currentColor; }
+  .facts { background:var(--ink); color:var(--bg); }
+  @media (max-width:820px) { .multi .branch iframe { display:none; } .gal figure:nth-child(odd):last-child { grid-column:1 / -1; } }
+  .facts .wrap { display:flex; flex-wrap:wrap; justify-content:center; gap:10px 34px; padding-block:16px; font-weight:600; font-size:15px; }
+  .facts .wrap > span::before { content:"✦"; margin-inline-end:10px; color:var(--gold); }
+  section { padding-block:72px; }
+  h2 { font:700 clamp(30px,4vw,46px)/1.15 var(--display); margin:6px 0 26px; }
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:18px; }
+  .card { background:var(--paper); border-radius:18px; padding:26px; border:1px solid color-mix(in srgb, var(--ink) 8%, transparent); }
+  .card .ic { width:52px; height:52px; border-radius:14px; display:grid; place-items:center; background:color-mix(in srgb, var(--accent) 12%, transparent); color:var(--accent); margin-bottom:14px; }
+  .card .ic svg { width:28px; height:28px; }
+  .card b { display:block; font:700 21px/1.3 var(--display); margin-bottom:6px; }
+  .card b { font-size:max(21px, 1.15em); }
+  .card span { opacity:.8; font-size:15px; }
+  .quotes { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:18px; }
+  .quotes figure { margin:0; background:var(--paper); border-radius:18px; padding:26px; display:grid; gap:12px; align-content:start; border-top:4px solid var(--gold); }
+  .quotes blockquote { margin:0; font-size:18px; line-height:1.55; }
+  .quotes figcaption { font-size:14px; opacity:.65; }
+  .stars { color:var(--gold); letter-spacing:2px; }
+  .small { font-size:13px; opacity:.6; margin-top:16px; }
+  .visit { background:var(--paper); }
+  .branches { display:grid; gap:22px; }
+  .branch { display:grid; grid-template-columns:1fr 1.1fr; gap:28px; background:var(--bg); border-radius:22px; padding:24px; align-items:start; }
+  .branch > * { min-width:0; }
+  .bname { font:700 22px/1.3 var(--display) !important; color:var(--ink) !important; letter-spacing:0 !important; text-transform:none !important; }
+  .bname small { display:block; font:600 14px var(--body); color:var(--accent); margin-top:4px; }
+  .small-btns .btn { padding:10px 16px; font-size:15px; }
+  .btn.line { background:transparent; border:1.5px solid var(--accent); color:var(--accent); }
+  .branch .btn:not(.wa):not(.line) { background:var(--accent); color:#fff; }
+  .contactline { margin-top:22px; text-align:center; }
+  .visit-grid { display:grid; grid-template-columns:1fr 1.2fr; gap:36px; align-items:start; }
+  .visit-grid > * { min-width:0; }
+  .info { display:grid; gap:24px; }
+  .info h3 { font:700 13px var(--body); letter-spacing:.12em; text-transform:uppercase; color:var(--accent); margin:0 0 8px; }
+  html[dir=rtl] .info h3 { letter-spacing:0; font-size:15px; }
+  .info p { margin:0; }
+  table { border-collapse:collapse; width:100%; max-width:380px; }
+  td { padding:4px 0; } td + td { text-align:end; font-weight:600; direction:ltr; unicode-bidi:isolate; }
+  iframe { width:100%; height:400px; border:0; border-radius:18px; }
+  .ltr { direction:ltr; unicode-bidi:isolate; display:inline-block; }
+  footer { background:var(--ink); color:var(--bg); padding-block:34px; font-size:14px; }
+  footer .wrap { display:flex; flex-wrap:wrap; justify-content:space-between; gap:10px 30px; }
+  .bar { position:fixed; inset-inline:0; bottom:0; z-index:10; display:grid; grid-template-columns:repeat(3,1fr); background:var(--ink); }
+  .bar a { display:flex; flex-direction:column; align-items:center; gap:2px; padding:10px 4px; color:#fff; text-decoration:none; font-size:13px; font-weight:600; }
+  .bar a.wa { background:#25D366; }
+  .bar svg { width:22px; height:22px; fill:currentColor; }
+  @media (min-width:821px) { .bar { display:none; } body { padding-bottom:0; } }
+  @media (max-width:820px) { .hero .has-img, .book { grid-template-columns:1fr; } .hero-img { max-width:280px; margin:0 auto; } .gal { grid-template-columns:1fr 1fr; } .book img { max-width:260px; } .visit-grid, .branch { grid-template-columns:1fr; } .branch { padding:16px; } .logo span { font-size:17px; } }
+</style>
+</head>
+<body>
+<div class="demo"><span lang="ar">موقع تجريبي أعدّه Uimad Studio لـ مطعم جولدن فينجر. هذا ليس الموقع الرسمي.</span><span lang="en">Demo website prepared for Golden Finger Restaurant by Uimad Studio. This is not the official site.</span></div>
+
+<header class="top"><div class="wrap">
+  <a class="logo" href="#"><i><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2" /> <path d="M7 2v20" /> <path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7" /> </svg> </i><span lang="ar">مطعم جولدن فينجر</span><span lang="en">Golden Finger Restaurant</span></a>
+  <div class="langs" role="group" aria-label="Language"><button data-set="ar">عربي</button><button data-set="en">EN</button></div>
+</div></header>
+
+<section class="hero" style="padding:0"><div class="wrap has-img"><div>
+  <div class="rating">★ <span class="ltr">4.1</span> <span lang="ar">على Google</span><span lang="en">on Google</span> · <span class="ltr">632</span> <span lang="ar">تقييم</span><span lang="en">reviews</span></div>
+  <div class="eyebrow"><span lang="ar">فلبيني · هندي · عربي · صيني · مفتوح 24 ساعة</span><span lang="en">Filipino · Indian · Arabic · Chinese · open 24 hours</span></div>
+  <h1><span lang="ar">مطعم جولدن فينجر</span><span lang="en">Golden Finger Restaurant</span></h1>
+  <p><span lang="ar">منذ 2010 بجانب محطة مترو الرقة. فطور وغداء وعشاء على مدار الساعة، أطباق فلبينية وهندية وكيرلاوية وعربية وصينية، وعصائر وسندويشات.</span><span lang="en">Since 2010, right beside Al Rigga Metro Station. Breakfast, lunch and dinner around the clock: Filipino, Indian and Kerala, Arabic and Chinese dishes, plus juices and sandwiches.</span></p>
+  <div class="btns">
+    <a class="btn wa" data-wa="971547243900" data-text="general" href="https://wa.me/971547243900"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></svg><span lang="ar">اطلب عبر واتساب</span><span lang="en">Order on WhatsApp</span></a>
+    <a class="btn" href="tel:+97143958919"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.2 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .6 3.6 1 1 0 0 1-.3 1z"/></svg><span lang="ar">اتصل بنا</span><span lang="en">Call us</span></a>
+    <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=Golden%20Fingers%20Restaurant%20Al%20Muraqqabat%20Deira%20Dubai"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg><span lang="ar">الاتجاهات</span><span lang="en">Directions</span></a>
+  </div>
+</div><img class="hero-img" src="img/restaurant.jpg" alt=""></div></section>
+
+<div class="facts"><div class="wrap"><span><span lang="ar">مفتوح 24 ساعة، كل يوم</span><span lang="en">Open 24 hours, every day</span></span><span><span lang="ar">بجانب مترو الرقة، البوابة 2</span><span lang="en">Beside Al Rigga Metro, Gate 2</span></span><span><span lang="ar">منذ 2010</span><span lang="en">Since 2010</span></span><span><span lang="ar">طعام حلال</span><span lang="en">Halal food</span></span><span><span lang="ar">تقييم 4.1 من 632 عميلاً على Google</span><span lang="en">Rated 4.1 by 632 customers on Google</span></span></div></div>
+
+<section class="gallery-s"><div class="wrap gal"><figure><img src="img/filipino-dishes.jpg" alt="Filipino dishes" loading="lazy"><figcaption><span lang="ar">أطباق فلبينية</span><span lang="en">Filipino dishes</span></figcaption></figure><figure><img src="img/kerala-meal.jpg" alt="Kerala meal" loading="lazy"><figcaption><span lang="ar">وجبة كيرلاوية</span><span lang="en">Kerala meal</span></figcaption></figure><figure><img src="img/grilled-chicken.jpg" alt="Grilled chicken &amp; rice" loading="lazy"><figcaption><span lang="ar">دجاج مشوي مع الرز</span><span lang="en">Grilled chicken &amp; rice</span></figcaption></figure><figure><img src="img/fish-curry.jpg" alt="Indian-style fish" loading="lazy"><figcaption><span lang="ar">سمك على الطريقة الهندية</span><span lang="en">Indian-style fish</span></figcaption></figure></div>
+  <p class="wrap small" style="color:#bbb"><span lang="ar">صور من صفحة المطعم على Google.</span><span lang="en">Photos from the restaurant's Google listing.</span></p></section>
+
+<section id="offer"><div class="wrap">
+  <div class="eyebrow"><span lang="ar">ماذا نقدّم</span><span lang="en">What we offer</span></div>
+  <h2><span lang="ar">أربعة مطابخ، على مدار الساعة</span><span lang="en">Four cuisines, around the clock</span></h2>
+  <div class="cards"><div class="card"><div class="ic"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z" /> <path d="M7 21h10" /> <path d="M19.5 12 22 6" /> <path d="M16.25 3c.27.1.8.53.75 1.36-.06.83-.93 1.2-1 2.02-.05.78.34 1.24.73 1.62" /> <path d="M11.25 3c.27.1.8.53.74 1.36-.05.83-.93 1.2-.98 2.02-.06.78.33 1.24.72 1.62" /> <path d="M6.25 3c.27.1.8.53.75 1.36-.06.83-.93 1.2-1 2.02-.05.78.34 1.24.74 1.62" /> </svg> </div><b><span lang="ar">فلبيني</span><span lang="en">Filipino</span></b><span><span lang="ar">سينيغانغ، أدوبو، بولالو، بانغوس مشوي، هالو هالو.</span><span lang="en">Sinigang, adobo, bulalo, grilled bangus, halo-halo.</span></span></div><div class="card"><div class="ic"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2" /> <path d="M7 2v20" /> <path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7" /> </svg> </div><b><span lang="ar">هندي وكيرلاوي</span><span lang="en">Indian &amp; Kerala</span></b><span><span lang="ar">فطور كيرلاوي ووجبات هندية طوال اليوم.</span><span lang="en">Kerala breakfast and Indian meals all day long.</span></span></div><div class="card"><div class="ic"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" /> </svg> </div><b><span lang="ar">عربي</span><span lang="en">Arabic</span></b><span><span lang="ar">أطباق عربية.</span><span lang="en">Arabic dishes.</span></span></div><div class="card"><div class="ic"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M17 21a1 1 0 0 0 1-1v-5.35c0-.457.316-.844.727-1.041a4 4 0 0 0-2.134-7.589 5 5 0 0 0-9.186 0 4 4 0 0 0-2.134 7.588c.411.198.727.585.727 1.041V20a1 1 0 0 0 1 1Z" /> <path d="M6 17h12" /> </svg> </div><b><span lang="ar">صيني</span><span lang="en">Chinese</span></b><span><span lang="ar">أطباق صينية.</span><span lang="en">Chinese dishes.</span></span></div><div class="card"><div class="ic"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="m6 8 1.75 12.28a2 2 0 0 0 2 1.72h4.54a2 2 0 0 0 2-1.72L18 8" /> <path d="M5 8h14" /> <path d="M7 15a6.47 6.47 0 0 1 5 0 6.47 6.47 0 0 0 5 0" /> <path d="m12 8 1-6h2" /> </svg> </div><b><span lang="ar">عصائر وحلويات</span><span lang="en">Juices &amp; desserts</span></b><span><span lang="ar">عصائر، كوفي جيلي، بوكو باندان، مانجو غراهام.</span><span lang="en">Juices, coffee jelly, buko pandan, mango graham.</span></span></div><div class="card"><div class="ic"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2" /> <path d="M15 18H9" /> <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14" /> <circle cx="17" cy="18" r="2" /> <circle cx="7" cy="18" r="2" /> </svg></div><b><span lang="ar">توصيل</span><span lang="en">Delivery</span></b><span><span lang="ar">اطلب عبر واتساب، أو على noon Food وSmiles.</span><span lang="en">Order on WhatsApp, or on noon Food and Smiles.</span></span></div></div>
+</div></section>
+
+<section class="menu-s" id="menu"><div class="wrap">
+  <div class="eyebrow"><span lang="ar">القائمة</span><span lang="en">Menu</span></div>
+  <h2><span lang="ar">من قائمتنا الفلبينية</span><span lang="en">From our Filipino menu</span></h2>
+  <div class="menu-grid"><div class="mcol"><h3><span lang="ar">أطباق رئيسية</span><span lang="en">Mains</span></h3><div class="mrow mhead one"><span></span><b><span lang="ar">درهم</span><span lang="en">AED</span></b></div><div class="mrow one"><span><span lang="ar">دجاج بيناغونغان</span><span lang="en">Chicken binagoongan</span></span><b class="ltr">24</b></div><div class="mrow one"><span><span lang="ar">أدوبو سا غاتا</span><span lang="en">Adobo sa gata</span></span><b class="ltr">25</b></div><div class="mrow one"><span><span lang="ar">دجاج مقلي محمّر</span><span lang="en">Roast fried chicken</span></span><b class="ltr">29</b></div><div class="mrow one"><span><span lang="ar">بولالو سا مانغا</span><span lang="en">Bulalo sa mangga</span></span><b class="ltr">35</b></div></div><div class="mcol"><h3><span lang="ar">أسماك</span><span lang="en">Fish</span></h3><div class="mrow mhead one"><span></span><b><span lang="ar">درهم</span><span lang="en">AED</span></b></div><div class="mrow one"><span><span lang="ar">سينيغانغ رأس السلمون</span><span lang="en">Sinigang salmon head</span></span><b class="ltr">26</b></div><div class="mrow one"><span><span lang="ar">بانغوس مشوي</span><span lang="en">Inihaw na bangus</span></span><b class="ltr">29</b></div><div class="mrow one"><span><span lang="ar">بلطي سارسيادو</span><span lang="en">Sarciadong tilapia</span></span><b class="ltr">19</b></div><div class="mrow one"><span><span lang="ar">بلطي بجوز الهند</span><span lang="en">Ginataang tilapia</span></span><b class="ltr">19</b></div></div><div class="mcol"><h3><span lang="ar">حلويات ومشروبات</span><span lang="en">Desserts &amp; drinks</span></h3><div class="mrow mhead one"><span></span><b><span lang="ar">درهم</span><span lang="en">AED</span></b></div><div class="mrow one"><span><span lang="ar">هالو هالو</span><span lang="en">Halo-halo</span></span><b class="ltr">13</b></div><div class="mrow one"><span><span lang="ar">كوفي جيلي</span><span lang="en">Coffee jelly</span></span><b class="ltr">13</b></div><div class="mrow one"><span><span lang="ar">بوكو باندان</span><span lang="en">Buko pandan</span></span><b class="ltr">13</b></div><div class="mrow one"><span><span lang="ar">مانجو غراهام</span><span lang="en">Mango graham</span></span><b class="ltr">11</b></div></div></div>
+  <p class="small"><span lang="ar">الأسعار بالدرهم الإماراتي. اسألونا عن العروض الحالية والقائمة الهندية والعربية والصينية.</span><span lang="en">Prices in AED. Ask us about current offers and our Indian, Arabic and Chinese menu.</span></p>
+</div></section>
+
+
+
+<section id="reviews" style="padding-top:0"><div class="wrap">
+  <div class="eyebrow">Google</div>
+  <h2><span lang="ar">آراء العملاء على Google</span><span lang="en">What customers say on Google</span></h2>
+  <div class="quotes"><figure><blockquote><span lang="ar">“من أفضل أماكن الأكل الهندي في الرقة. لذيذ جداً. جرّبت الفطور وكان كله ممتازاً. مفتوح 24 ساعة وفيه جلسات كثيرة. يستحق التجربة.”</span><span lang="en">“One of the best food spot for Indian cuisine in Al Rigga. Very delicious. So far tried breakfast and all were so good. Its 24 hour open and have plenty of dining seating. Must try.”</span></blockquote><figcaption><span lang="ar">MFJ · تقييم على Google</span><span lang="en">MFJ · Google review</span><span lang="ar"> · مترجم</span></figcaption></figure><figure><blockquote><span lang="ar">“الأكل جيد بالنسبة لسعره المنافس جداً ولخدمة العملاء التي تقدمونها. …”</span><span lang="en">“The food is good considering it's very competitive price and the customer service you are providing. …”</span></blockquote><figcaption><span lang="ar">آرييل ب. · تقييم على Google</span><span lang="en">Ariel P. · Google review</span><span lang="ar"> · مترجم</span></figcaption></figure></div>
+  <p class="small"><span lang="ar">اقتباسات من تقييمات Google العامة.</span><span lang="en">Quotes from public Google reviews.</span> <a href="https://www.google.com/maps/search/?api=1&query=Golden%20Fingers%20Restaurant%20Al%20Muraqqabat%20Deira%20Dubai"><span lang="ar">اقرأ كل التقييمات على Google</span><span lang="en">Read all reviews on Google</span> →</a></p>
+</div></section>
+
+<section class="visit" id="visit"><div class="wrap">
+  <div class="eyebrow"><span lang="ar">زورونا</span><span lang="en">Visit us</span></div>
+  <h2><span lang="ar">الرقة، ديرة، دبي</span><span lang="en">Al Rigga, Deira, Dubai</span></h2>
+  <div class="branches"><div class="branch solo">
+    <div class="info">
+      
+      <div><h3><span lang="ar">ساعات العمل</span><span lang="en">Opening hours</span></h3><table><tr><td><span lang="ar">كل يوم</span><span lang="en">Every day</span></td><td>24/7</td></tr></table></div>
+      <div><h3><span lang="ar">العنوان</span><span lang="en">Address</span></h3><p><span lang="ar">فندق جراند مارينو، بجانب محطة مترو الرقة، البوابة 2، الرقة، ديرة، دبي</span><span lang="en">Grand Marino Hotel, beside Al Rigga Metro Station, Gate 2, Al Rigga, Deira, Dubai</span></p></div>
+      <div class="btns small-btns"><a class="btn wa" data-wa="971547243900" href="https://wa.me/971547243900"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></svg><span lang="ar">واتساب</span><span lang="en">WhatsApp</span></a><a class="btn" href="tel:+97143958919"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.2 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .6 3.6 1 1 0 0 1-.3 1z"/></svg><span class="ltr">+971 4 395 8919</span></a><a class="btn line" href="https://www.google.com/maps/search/?api=1&query=Golden%20Fingers%20Restaurant%20Al%20Muraqqabat%20Deira%20Dubai"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg><span lang="ar">الاتجاهات</span><span lang="en">Directions</span></a></div>
+    </div>
+    <iframe title="Map" src="https://maps.google.com/maps?q=Golden%20Fingers%20Restaurant%2C%20Al%20Muraqqabat%2C%20Deira%2C%20Dubai&z=16&output=embed"></iframe>
+  </div></div>
+  
+  <p class="contactline"></p>
+</div></section>
+
+<footer><div class="wrap">
+  <span>© 2026 <span lang="ar">مطعم جولدن فينجر</span><span lang="en">Golden Finger Restaurant</span></span>
+  <span><span lang="ar">موقع تجريبي من Uimad Studio</span><span lang="en">Demo website by Uimad Studio</span></span>
+</div></footer>
+
+<nav class="bar">
+  <a href="tel:+97143958919"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.2 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .6 3.6 1 1 0 0 1-.3 1z"/></svg><span lang="ar">اتصل بنا</span><span lang="en">Call us</span></a>
+  <a class="wa" data-wa="971547243900" href="https://wa.me/971547243900"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></svg><span lang="ar">واتساب</span><span lang="en">WhatsApp</span></a>
+  <a href="https://www.google.com/maps/search/?api=1&query=Golden%20Fingers%20Restaurant%20Al%20Muraqqabat%20Deira%20Dubai"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg><span lang="ar">الاتجاهات</span><span lang="en">Directions</span></a>
+</nav>
+
+<script>
+  const set = l => { document.documentElement.lang = l; document.documentElement.dir = l === "ar" ? "rtl" : "ltr";
+    document.querySelectorAll("[data-set]").forEach(b => b.setAttribute("aria-pressed", b.dataset.set === l));
+    document.querySelectorAll("[data-wa]").forEach(a => a.href = "https://wa.me/" + a.dataset.wa + "?text=" + encodeURIComponent((a.dataset.text === "booking" ? WB : WA)[l]));
+    try { localStorage.setItem("lang", l); } catch (e) {} };
+  const WA = {"ar":"مرحباً جولدن فينجر، أريد أن أطلب: ","en":"Hello Golden Finger, I would like to order: ","fr":""};
+  const WB = {"ar":"مرحباً جولدن فينجر، أريد أن أطلب: ","en":"Hello Golden Finger, I would like to order: ","fr":""};
+  document.querySelectorAll("[data-set]").forEach(b => b.onclick = () => set(b.dataset.set));
+  let l = new URLSearchParams(location.search).get("lang");
+  if (!l) try { l = localStorage.getItem("lang"); } catch (e) {}
+  set(["ar","en"].includes(l) ? l : "en");
+</script>
+</body>
+</html>
