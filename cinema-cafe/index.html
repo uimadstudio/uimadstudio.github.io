@@ -216,7 +216,7 @@
   if (!l) try { l = localStorage.getItem("lang"); } catch (e) {}
   set(["ar","en"].includes(l) ? l : "en");
   // Visit counter (Uimad Suivi): which demo is opened, and from where (?r=email / wa). No cookie, no personal data.
-  try { if (/github.io$/.test(location.hostname)) new Image().src = "https://script.google.com/macros/s/AKfycbwT_75Rs8ZV6YeH874yP-UA_grZhIppzJoauUtmGz5oRdehOFW4YrJRW-vXeh3ERiJH/exec" + "?t=visit&id=cinema-cafe&ua=" + encodeURIComponent(new URLSearchParams(location.search).get("r") || "direct"); } catch (e) {}
+  try { if (/github.io$|gt.tc$/.test(location.hostname)) new Image().src = "https://script.google.com/macros/s/AKfycbwT_75Rs8ZV6YeH874yP-UA_grZhIppzJoauUtmGz5oRdehOFW4YrJRW-vXeh3ERiJH/exec" + "?t=visit&id=cinema-cafe&ua=" + encodeURIComponent(new URLSearchParams(location.search).get("r") || "direct"); } catch (e) {}
 </script>
 </body>
 </html>
