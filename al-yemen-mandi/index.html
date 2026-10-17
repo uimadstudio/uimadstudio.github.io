@@ -4,6 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uimadstudio.github.io/al-yemen-mandi/">
+<meta property="og:title" content="مطعم اليمن للمندي · موقعكم جاهز">
+<meta property="og:description" content="نسخة تجريبية أعدّها Uimad Studio لكم: قائمتكم وصوركم وزر واتساب. بدون أي التزام.">
+<meta property="og:image" content="https://uimadstudio.github.io/al-yemen-mandi/email-hero.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="820">
+<meta name="twitter:card" content="summary_large_image">
 <title>Al Yemen Mandi · Dubai</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Amiri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap">
 <style>
@@ -14,7 +22,7 @@
   html { scroll-behavior:smooth; }
   body { margin:0; background:var(--bg); color:var(--ink); font:17px/1.65 var(--body); padding-bottom:72px; }
   [lang]:not(html) { display:none; }
-  html[lang=ar] [lang=ar], html[lang=en] [lang=en] { display:revert; }
+  html[lang=ar] [lang=ar], html[lang=en] [lang=en], html[lang=fr] [lang=fr] { display:revert; }
   a { color:inherit; }
   .wrap { max-width:1120px; margin:0 auto; padding-inline:20px; }
   .demo { background:#111; color:#eee; font-size:13px; text-align:center; padding:7px 16px; }
@@ -207,6 +215,8 @@
   let l = new URLSearchParams(location.search).get("lang");
   if (!l) try { l = localStorage.getItem("lang"); } catch (e) {}
   set(["ar","en"].includes(l) ? l : "ar");
+  // Visit counter (Uimad Suivi): which demo is opened, and from where (?r=email / wa). No cookie, no personal data.
+  try { if (/github.io$/.test(location.hostname)) new Image().src = "https://script.google.com/macros/s/AKfycbwT_75Rs8ZV6YeH874yP-UA_grZhIppzJoauUtmGz5oRdehOFW4YrJRW-vXeh3ERiJH/exec" + "?t=visit&id=al-yemen-mandi&ua=" + encodeURIComponent(new URLSearchParams(location.search).get("r") || "direct"); } catch (e) {}
 </script>
 </body>
 </html>
